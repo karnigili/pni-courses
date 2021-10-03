@@ -196,7 +196,7 @@ def plot_highlighted_peaks(nerve_data, times, peaks, x_lim=False):
 
 
     
-def plot_highlighted_AP_JP(nerve_data, muscle_data, times, peaks, k_labels, x_lim=False,y_lim=False, splash_onset=False):
+def plot_highlighted_AP_JP_old(nerve_data, muscle_data, times, peaks, k_labels, x_lim=False,y_lim=False, splash_onset=False):
     
     colors = plt.cm.Dark2(np.linspace(0, 1, max(k_labels)+2))
     plt.set_cmap('Dark2')
@@ -235,6 +235,43 @@ def plot_highlighted_AP_JP(nerve_data, muscle_data, times, peaks, k_labels, x_li
     plt.show()
 
     
+def plot_highlighted_AP_JP(nerve_data, muscle_data, times, peaks, k_labels, x_lim=False,y_lim=False, splash_onset=False):
+    
+    colors = plt.cm.Dark2(np.linspace(0, 1, max(med_amp_clusters)+2))
+
+
+    plt.set_cmap('Dark2')
+
+    fig, axes0 = plt.subplots(figsize=(10, 3), sharex = True, sharey=False)
+
+    axes0.plot(times, med_filter_n, alpha=0.8)
+    axes0.scatter(times[peaks], nerve_data[peaks], color=[colors[c] for c in k_labels])
+    axes1 = axes0.twinx()
+    axes1.plot(times, muscle_data, c='grey')
+    for x,c in zip(times[peaks], k_labels):
+        axes1.axvline(x=x, linestyle='dashed', color=colors[c], alpha=0.2)
+
+
+    if x_lim:
+        axes[0].set_xlim(x_lim[0],x_lim[1])
+        axes[1].set_xlim(x_lim[0],x_lim[1])
+    if y_lim:
+        axes[1].set_ylim(y_lim[0],y_lim[1])
+
+    if splash_onset:
+        axes[0].axvline(splash_onset, linestyle='solid', color='grey', label='splash onset')
+        axes[1].axvline(splash_onset, linestyle='solid', color='grey',label='splash onset')
+        plt.legend(loc="best")
+
+    axes0.set_title('Paired recording: Action Potentials/ Junction Potentials')
+    axes0.set_xlabel('times (s)')
+    axes0.set_ylabel('AP Amplitude (uV)')
+
+    axes1.set_ylabel('JP Amplitude (mV)')
+
+    plt.tight_layout()
+    plt.show()
+
 
 def run_spike_sorting_analysis(file_path, params={'k':3, 'peak_finding':def_params}):
 
