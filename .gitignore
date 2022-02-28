@@ -1,10 +1,11 @@
 *.abf
-*DS_Store
+*.DS_Store
 __pycache__
 .ipynb_checkpoint
 /501b/data/**
 /501b/SLEAP/**
 **.ipynb_checkpoints
+<<<<<<< HEAD
 /502b/demos/**
 /502b/data/**
 *.nii.gz
