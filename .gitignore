@@ -1,0 +1,17 @@
+*.abf
+*DS_Store
+__pycache__
+.ipynb_checkpoint
+/501b/data/**
+/501b/SLEAP/**
+**.ipynb_checkpoints
+/502b/demos/**
+/502b/data/**
+*.nii.gz
+*.tif
+*.zip
+*.avi
+*.npy
+*.mat
+*.fif
+*.gz
