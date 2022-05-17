@@ -16,3 +16,10 @@ __pycache__
 *.mat
 *.fif
 *.gz
+*.tsv
+*.DS_Store
+*.svg
+*.png
+*.pkl
+*.json
+*.csv

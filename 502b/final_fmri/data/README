@@ -1,0 +1,7 @@
+This dataset has been published in the following paper:
+
+Kobayashi, K., Lee, S., Filipowicz, A. L. S., McGaughey, K. D., Kable, J. W. & Nassar, M. R. (2021). Dynamic representation of the subjective value of information. Journal of Neuroscience, https://doi.org/10.1523/JNEUROSCI.0423-21.2021.
+ 
+15 participants completed a modified "beads task" paradigm, in which they decided whether to acquire costly information, across four scanning runs. In addition to raw data under sub-\*/, preprocessed data are available under derivatives/fsl/sub-\*/. 
+
+Code for behavioral modeling are available at gitlab.com/kenji.k/beadsVOI/. Unthresholded group-level statistics maps are available at neurovault.org/collections/MORTKKAM/.
